@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>cn.wode490390.nukkit</groupId>
+    <artifactId>skyplaingenerator</artifactId>
+    <version>1.0.0</version>
+    <name>SkyPlainGenerator</name>
+    <description>Sky plain generator plugin for Nukkit</description>
+    <inceptionYear>2019</inceptionYear>
+    <url>http://wode490390.cn/</url>
+    <packaging>jar</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.number>SNAPSHOT</project.build.number>
+    </properties>
+    <licenses>
+        <license>
+            <name>GNU General Public License, Version 3.0</name>
+            <url>http://www.gnu.org/licenses/gpl.html</url>
+        </license>
+    </licenses>
+    <repositories>
+        <repository>
+            <id>nukkitx</id>
+            <url>http://repo.nukkitx.com/main/</url>
+        </repository>
+    </repositories>
+    <dependencies>
+        <dependency>
+            <groupId>cn.nukkit</groupId>
+            <artifactId>nukkit</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>wodeSkyPlainGenerator-v${project.version}</finalName>
+        <defaultGoal>clean package</defaultGoal>
+        <resources>
+            <resource>
+                <targetPath>.</targetPath>
+                <filtering>true</filtering>
+                <directory>${basedir}/src/main/resources</directory>
+                <includes>
+                    <include>*.yml</include>
+                </includes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.1</version>
+                <configuration>
+                    <archive>
+                        <addMavenDescriptor>false</addMavenDescriptor>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

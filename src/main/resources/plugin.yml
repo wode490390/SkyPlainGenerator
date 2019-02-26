@@ -1,0 +1,8 @@
+main: cn.wode490390.nukkit.skyplaingenerator.SPGenerator
+name: "SkyPlainGenerator"
+author: "wode490390"
+description: "Sky plain generator plugin for Nukkit"
+website: "http://wode490390.cn/"
+version: "${pom.version}"
+api: ["1.0.0"]
+load: STARTUP
