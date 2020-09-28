@@ -1,4 +1,4 @@
-#Enable biome
+# enable biome
 biome: true
-#Enable limited old world generator
+# register limited old world generator
 old: true

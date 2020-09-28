@@ -1,24 +1,23 @@
-package cn.wode490390.nukkit.skyplain;
+package cn.wode490390.nukkit.skyplaingen.generator;
 
 import cn.nukkit.level.biome.EnumBiome;
 import cn.nukkit.level.format.generic.BaseFullChunk;
-import cn.nukkit.level.generator.Generator;
-import java.util.HashMap;
+
 import java.util.Map;
 
 public class SkyPlainOldGenerator extends SkyPlainGenerator {
 
     public SkyPlainOldGenerator() {
-        this(new HashMap<>());
+        super();
     }
 
     public SkyPlainOldGenerator(Map<String, Object> options) {
-        super(options);
+        super();
     }
 
     @Override
     public int getId() {
-        return Generator.TYPE_OLD;
+        return TYPE_OLD;
     }
 
     @Override
@@ -31,7 +30,7 @@ public class SkyPlainOldGenerator extends SkyPlainGenerator {
         if (this.validChunk(chunkX, chunkZ)) {
             super.generateChunk(chunkX, chunkZ);
         } else {
-            BaseFullChunk chunk = level.getChunk(chunkX, chunkZ);
+            BaseFullChunk chunk = this.level.getChunk(chunkX, chunkZ);
             for (int x = 0; x < 16; ++x) {
                 for (int z = 0; z < 16; ++z) {
                     for (int y = 0; y < 256; ++y) {
